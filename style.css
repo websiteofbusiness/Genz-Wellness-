@@ -8,14 +8,14 @@
     --dark: #17201a;
     --text: #293129;
     --muted: #687068;
-    --light: #f5f7f0;
-    --card: #ffffff;
+    --background: #f5f7f0;
+    --white: #ffffff;
     --border: #dfe4da;
 }
 
 body {
     font-family: Arial, Helvetica, sans-serif;
-    background: var(--light);
+    background: var(--background);
     color: var(--text);
     line-height: 1.6;
 }
@@ -25,36 +25,40 @@ body {
 
 .navbar {
     position: fixed;
+
     top: 0;
     left: 0;
+
     width: 100%;
     height: 65px;
 
     display: flex;
+
     align-items: center;
     justify-content: space-between;
 
     padding: 0 5%;
 
-    background: rgba(245, 247, 240, 0.95);
+    background: rgba(245, 247, 240, 0.96);
+
     backdrop-filter: blur(10px);
 
-    z-index: 1000;
-
     border-bottom: 1px solid var(--border);
+
+    z-index: 1000;
 }
 
 .logo {
-    font-weight: 800;
     font-size: 18px;
+    font-weight: 800;
 }
 
-.nav-right {
+.nav-stats {
     display: flex;
     gap: 20px;
 
-    font-weight: bold;
     font-size: 14px;
+    font-weight: bold;
 }
 
 
@@ -76,6 +80,7 @@ body {
 
 #progressBar {
     width: 0%;
+
     height: 100%;
 
     background: var(--dark);
@@ -84,7 +89,7 @@ body {
 }
 
 
-/* ================= SCREEN ================= */
+/* ================= SCREENS ================= */
 
 .screen {
     min-height: 100vh;
@@ -107,7 +112,9 @@ body {
 /* ================= HERO ================= */
 
 .hero {
+    width: 100%;
     max-width: 900px;
+
     text-align: center;
 }
 
@@ -156,15 +163,15 @@ body {
 
 /* ================= NAME ================= */
 
-.name-box {
-    margin: 30px auto;
-
+.name-area {
     max-width: 350px;
+
+    margin: 30px auto;
 
     text-align: left;
 }
 
-.name-box label {
+.name-area label {
     display: block;
 
     font-size: 13px;
@@ -174,10 +181,10 @@ body {
     margin-bottom: 7px;
 }
 
-.name-box input {
+.name-area input {
     width: 100%;
 
-    padding: 15px 17px;
+    padding: 15px;
 
     border: 2px solid var(--border);
 
@@ -190,8 +197,16 @@ body {
     background: white;
 }
 
-.name-box input:focus {
+.name-area input:focus {
     border-color: var(--dark);
+}
+
+.course-info {
+    margin-top: 20px;
+
+    color: var(--muted);
+
+    font-size: 13px;
 }
 
 
@@ -221,30 +236,20 @@ button:hover {
     transform: translateY(-3px);
 }
 
+button:disabled {
+    opacity: 0.5;
+
+    cursor: not-allowed;
+
+    transform: none;
+}
+
 .secondary {
     background: white;
 
     color: var(--dark);
 
     border: 2px solid var(--border);
-}
-
-.back-button {
-    background: transparent;
-
-    color: var(--dark);
-
-    padding-left: 0;
-
-    margin-bottom: 25px;
-}
-
-.course-info {
-    margin-top: 20px;
-
-    color: var(--muted);
-
-    font-size: 13px;
 }
 
 
@@ -277,20 +282,30 @@ button:hover {
 
     line-height: 1.05;
 
-    margin-bottom: 20px;
-
     letter-spacing: -2px;
+
+    margin-bottom: 20px;
 }
 
 .intro,
 .module-description {
-    max-width: 700px;
-
     color: var(--muted);
 
     font-size: 18px;
 
+    max-width: 700px;
+
     margin-bottom: 30px;
+}
+
+.back-button {
+    background: transparent;
+
+    color: var(--dark);
+
+    padding-left: 0;
+
+    margin-bottom: 20px;
 }
 
 
@@ -303,10 +318,12 @@ button:hover {
 
     gap: 18px;
 
-    margin-top: 40px;
+    margin-top: 35px;
 }
 
 .module-card {
+    position: relative;
+
     background: white;
 
     padding: 25px;
@@ -320,8 +337,6 @@ button:hover {
     cursor: pointer;
 
     transition: 0.25s;
-
-    position: relative;
 }
 
 .module-card:hover {
@@ -330,8 +345,14 @@ button:hover {
     border-color: var(--dark);
 }
 
+.module-card.locked {
+    opacity: 0.45;
+
+    cursor: not-allowed;
+}
+
 .module-number {
-    font-size: 13px;
+    font-size: 12px;
 
     font-weight: bold;
 
@@ -339,7 +360,7 @@ button:hover {
 }
 
 .module-icon {
-    font-size: 35px;
+    font-size: 38px;
 
     margin: 12px 0;
 }
@@ -359,16 +380,10 @@ button:hover {
 .module-status {
     position: absolute;
 
-    top: 20px;
     right: 20px;
+    top: 20px;
 
     font-size: 18px;
-}
-
-.locked {
-    opacity: 0.5;
-
-    cursor: not-allowed;
 }
 
 
@@ -385,9 +400,9 @@ button:hover {
 
     color: white;
 
-    border-radius: 22px;
-
     padding: 25px;
+
+    border-radius: 22px;
 
     margin: 30px 0;
 }
@@ -401,9 +416,10 @@ button:hover {
 }
 
 .play-icon {
-    min-width: 65px;
-
+    width: 65px;
     height: 65px;
+
+    min-width: 65px;
 
     border-radius: 50%;
 
@@ -415,11 +431,11 @@ button:hover {
 
     place-items: center;
 
-    font-size: 22px;
+    font-size: 20px;
 }
 
 
-/* ================= CARDS ================= */
+/* ================= KNOWLEDGE CARDS ================= */
 
 .cards {
     display: grid;
@@ -467,9 +483,9 @@ button:hover {
 
     border-radius: 22px;
 
-    margin: 30px 0;
-
     border: 1px solid var(--border);
+
+    margin: 30px 0;
 }
 
 .activity-box h3 {
@@ -519,8 +535,6 @@ button:hover {
     padding: 30px;
 
     border-radius: 22px;
-
-    margin-top: 25px;
 }
 
 .challenge-icon {
@@ -544,6 +558,16 @@ button:hover {
 
 .final-content {
     text-align: center;
+
+    max-width: 850px;
+}
+
+.final-content h1 {
+    font-size: clamp(45px, 7vw, 80px);
+
+    line-height: 1;
+
+    margin-bottom: 20px;
 }
 
 .final-content > p {
@@ -551,7 +575,7 @@ button:hover {
 
     font-size: 18px;
 
-    margin-bottom: 35px;
+    margin-bottom: 30px;
 }
 
 .final-question {
@@ -593,7 +617,7 @@ button:hover {
 }
 
 #finalResult {
-    margin-top: 25px;
+    margin-top: 20px;
 
     font-size: 20px;
 
@@ -604,9 +628,9 @@ button:hover {
 /* ================= COMPLETION ================= */
 
 .completion {
-    text-align: center;
-
     max-width: 700px;
+
+    text-align: center;
 }
 
 .success {
@@ -677,7 +701,7 @@ button:hover {
 .certificate-wrapper {
     width: 100%;
 
-    max-width: 900px;
+    max-width: 950px;
 }
 
 .certificate {
@@ -691,13 +715,9 @@ button:hover {
 .certificate-border {
     border: 4px solid var(--dark);
 
-    min-height: 550px;
-
     padding: 55px;
 
     text-align: center;
-
-    position: relative;
 }
 
 .certificate-logo {
@@ -705,9 +725,9 @@ button:hover {
 }
 
 .certificate-small {
-    letter-spacing: 4px;
-
     font-size: 13px;
+
+    letter-spacing: 4px;
 
     font-weight: bold;
 
@@ -723,15 +743,15 @@ button:hover {
 .certificate-text {
     color: var(--muted);
 
-    margin: 15px auto;
-
     max-width: 600px;
+
+    margin: 15px auto;
 }
 
 #certificateName {
     font-family: Georgia, serif;
 
-    font-size: 38px;
+    font-size: 40px;
 
     font-style: italic;
 
@@ -759,17 +779,17 @@ button:hover {
 }
 
 .certificate-stats span {
-    font-size: 12px;
-
     color: var(--muted);
+
+    font-size: 12px;
 }
 
 .certificate-stats strong {
     display: block;
 
-    font-size: 20px;
-
     color: var(--dark);
+
+    font-size: 20px;
 }
 
 .certificate-footer {
@@ -810,6 +830,7 @@ button:hover {
 
         transform: translateY(0);
     }
+
 }
 
 
@@ -825,12 +846,6 @@ button:hover {
         font-size: 15px;
     }
 
-    .hero h1 {
-        font-size: 60px;
-
-        letter-spacing: -3px;
-    }
-
     .module-grid,
     .cards {
         grid-template-columns: 1fr;
@@ -842,12 +857,10 @@ button:hover {
 
     .certificate-border {
         padding: 30px 18px;
-
-        min-height: auto;
     }
 
     .certificate-stats {
-        gap: 15px;
+        gap: 20px;
 
         flex-wrap: wrap;
     }
@@ -867,10 +880,11 @@ button:hover {
     }
 
     .video-card {
-        flex-direction: column;
-
         align-items: flex-start;
+
+        flex-direction: column;
     }
+
 }
 
 
@@ -878,14 +892,14 @@ button:hover {
 
 @media print {
 
-    body {
-        background: white;
-    }
-
     .navbar,
     .progress-container,
     .certificate-actions {
         display: none !important;
+    }
+
+    body {
+        background: white;
     }
 
     .screen {
@@ -909,4 +923,5 @@ button:hover {
     .certificate-border {
         min-height: 90vh;
     }
+
 }

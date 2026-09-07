@@ -4,25 +4,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Fuel Your Future | Gen Z Wellness</title>
+    <title>Fuel Your Future</title>
 
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-    <!-- TOP NAVIGATION -->
+    <!-- NAVBAR -->
     <header class="navbar">
         <div class="logo">🌱 Fuel Your Future</div>
 
-        <div class="nav-right">
+        <div class="nav-stats">
             <span id="xpDisplay">0 XP</span>
             <span id="progressText">0%</span>
         </div>
     </header>
 
-
-    <!-- PROGRESS -->
+    <!-- PROGRESS BAR -->
     <div class="progress-container">
         <div id="progressBar"></div>
     </div>
@@ -34,7 +33,9 @@
 
         <div class="hero">
 
-            <div class="badge">🌱 GEN Z WELLNESS EXPERIENCE</div>
+            <div class="badge">
+                🌱 GEN Z WELLNESS
+            </div>
 
             <h1>
                 Fuel Your
@@ -42,33 +43,33 @@
             </h1>
 
             <p>
-                An interactive wellness journey designed to help
-                you explore everyday habits, energy, wellbeing and
-                healthy routines.
+                An interactive wellness journey exploring
+                nutrition, movement, sleep, mindset and
+                everyday healthy habits.
             </p>
 
-            <div class="name-box">
+            <div class="name-area">
 
                 <label for="learnerName">
-                    Enter your name to begin
+                    What's your name?
                 </label>
 
                 <input
-                    id="learnerName"
                     type="text"
-                    placeholder="Your name"
+                    id="learnerName"
+                    placeholder="Enter your name"
                     maxlength="40"
                 >
 
             </div>
 
-            <button onclick="startCourse()">
+            <button id="startButton">
                 Start Your Journey →
             </button>
 
             <div class="course-info">
                 📚 10 Modules &nbsp; • &nbsp;
-                🧠 Interactive Activities &nbsp; • &nbsp;
+                🧠 Activities &nbsp; • &nbsp;
                 🏆 Certificate
             </div>
 
@@ -83,13 +84,13 @@
 
         <div class="content wide">
 
-            <p class="step">YOUR LEARNING JOURNEY</p>
+            <p class="step">YOUR JOURNEY</p>
 
             <h2>Choose a module.</h2>
 
             <p class="intro">
-                Explore each topic, complete the activity and
-                unlock the next stage of your journey.
+                Complete each module to unlock the next part
+                of your wellness journey.
             </p>
 
             <div id="moduleGrid" class="module-grid"></div>
@@ -105,7 +106,7 @@
 
         <div class="content">
 
-            <button class="back-button" onclick="showDashboard()">
+            <button id="backButton" class="back-button">
                 ← Back to modules
             </button>
 
@@ -113,19 +114,26 @@
 
             <h2 id="moduleTitle"></h2>
 
-            <p id="moduleDescription" class="module-description"></p>
+            <p
+                id="moduleDescription"
+                class="module-description"
+            ></p>
 
-            <!-- VIDEO PLACEHOLDER -->
+
+            <!-- VIDEO -->
+
             <div class="video-card">
 
-                <div class="play-icon">▶</div>
+                <div class="play-icon">
+                    ▶
+                </div>
 
                 <div>
-                    <strong>Short-form lesson</strong>
+                    <strong>Watch & Learn</strong>
 
                     <p>
-                        Add your 30–60 second educational video
-                        here when producing the final course.
+                        Your 30–60 second educational video
+                        can be placed here.
                     </p>
                 </div>
 
@@ -134,20 +142,28 @@
 
             <!-- KNOWLEDGE CARDS -->
 
-            <div id="knowledgeCards" class="cards"></div>
+            <div
+                id="knowledgeCards"
+                class="cards"
+            ></div>
 
 
-            <!-- ACTIVITY -->
+            <!-- QUIZ -->
 
             <div class="activity-box">
 
-                <p class="step">INTERACTIVE ACTIVITY</p>
+                <p class="step">
+                    INTERACTIVE CHECK
+                </p>
 
                 <h3 id="activityTitle"></h3>
 
                 <p id="activityQuestion"></p>
 
-                <div id="activityOptions" class="quiz-options"></div>
+                <div
+                    id="activityOptions"
+                    class="quiz-options"
+                ></div>
 
                 <p id="activityResult"></p>
 
@@ -158,13 +174,17 @@
 
             <div class="challenge-box">
 
-                <span class="challenge-icon">🎯</span>
+                <div class="challenge-icon">
+                    🎯
+                </div>
 
-                <h3>Try it in real life</h3>
+                <h3>
+                    Real-Life Challenge
+                </h3>
 
                 <p id="challengeText"></p>
 
-                <button id="challengeButton" onclick="completeModule()">
+                <button id="completeModuleButton">
                     Complete Module ✓
                 </button>
 
@@ -175,24 +195,28 @@
     </section>
 
 
-    <!-- ================= FINAL CHALLENGE ================= -->
+    <!-- ================= FINAL QUIZ ================= -->
 
     <section id="final" class="screen">
 
         <div class="content final-content">
 
-            <div class="badge">🏆 FINAL CHALLENGE</div>
+            <div class="badge">
+                🏆 FINAL CHALLENGE
+            </div>
 
-            <h1>How much did you learn?</h1>
+            <h1>
+                How much did you learn?
+            </h1>
 
             <p>
-                Complete the final knowledge check to finish
-                your Fuel Your Future journey.
+                Complete the final knowledge check to
+                finish your journey.
             </p>
 
             <div id="finalQuiz"></div>
 
-            <button id="finalButton" onclick="finishFinalQuiz()">
+            <button id="submitFinalButton">
                 Submit Final Challenge
             </button>
 
@@ -209,38 +233,61 @@
 
         <div class="content completion">
 
-            <div class="success">🎉</div>
+            <div class="success">
+                🎉
+            </div>
 
-            <h1>Journey Complete!</h1>
+            <h1>
+                Journey Complete!
+            </h1>
 
             <p id="completionMessage"></p>
 
             <div class="stats">
 
                 <div>
-                    <strong id="finalXP">0</strong>
-                    <span>XP Earned</span>
+                    <strong id="finalXP">
+                        0
+                    </strong>
+
+                    <span>
+                        XP Earned
+                    </span>
                 </div>
 
                 <div>
-                    <strong id="finalScore">0%</strong>
-                    <span>Final Score</span>
+                    <strong id="finalScore">
+                        0%
+                    </strong>
+
+                    <span>
+                        Final Score
+                    </span>
                 </div>
 
                 <div>
-                    <strong>10</strong>
-                    <span>Modules</span>
+                    <strong>
+                        10
+                    </strong>
+
+                    <span>
+                        Modules
+                    </span>
                 </div>
 
             </div>
+
 
             <div class="achievement">
                 🏅 <strong>Wellness Explorer</strong>
+
                 <br>
+
                 You completed the full learning journey.
             </div>
 
-            <button onclick="showCertificate()">
+
+            <button id="certificateButton">
                 View Certificate 📜
             </button>
 
@@ -251,7 +298,10 @@
 
     <!-- ================= CERTIFICATE ================= -->
 
-    <section id="certificate" class="screen certificate-screen">
+    <section
+        id="certificate"
+        class="screen certificate-screen"
+    >
 
         <div class="certificate-wrapper">
 
@@ -267,7 +317,9 @@
                         CERTIFICATE OF COMPLETION
                     </p>
 
-                    <h1>Fuel Your Future</h1>
+                    <h1>
+                        Fuel Your Future
+                    </h1>
 
                     <p class="certificate-text">
                         This certificate is proudly presented to
@@ -280,43 +332,62 @@
                     <div class="certificate-line"></div>
 
                     <p class="certificate-text">
+
                         for successfully completing the
-                        <strong>Fuel Your Future</strong>
-                        interactive Gen Z wellness learning journey.
+                        <strong>
+                            Fuel Your Future
+                        </strong>
+                        interactive wellness learning journey.
+
                     </p>
+
 
                     <div class="certificate-stats">
 
                         <span>
-                            <strong>10</strong>
-                            Modules
-                        </span>
 
-                        <span>
-                            <strong id="certificateScore">
-                                100%
+                            <strong>
+                                10
                             </strong>
-                            Final Score
+
+                            Modules
+
                         </span>
 
+
                         <span>
+
+                            <strong id="certificateScore">
+                                0%
+                            </strong>
+
+                            Final Score
+
+                        </span>
+
+
+                        <span>
+
                             <strong id="certificateDate">
                                 2026
                             </strong>
+
                             Completed
+
                         </span>
 
                     </div>
 
+
                     <div class="certificate-footer">
 
-                        <div>
+                        <span>
                             🌱 Fuel Your Future
-                        </div>
+                        </span>
 
-                        <div>
+                        <span>
                             🏅 Wellness Explorer
-                        </div>
+                        </span>
 
                     </div>
 
@@ -327,13 +398,13 @@
 
             <div class="certificate-actions">
 
-                <button onclick="printCertificate()">
+                <button id="printButton">
                     🖨 Print / Save Certificate
                 </button>
 
                 <button
+                    id="courseButton"
                     class="secondary"
-                    onclick="showDashboard()"
                 >
                     ← Back to Course
                 </button>
@@ -344,6 +415,8 @@
 
     </section>
 
+
+    <!-- JAVASCRIPT -->
 
     <script src="script.js"></script>
 
